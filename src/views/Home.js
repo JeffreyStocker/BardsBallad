@@ -8,7 +8,7 @@ import SlideOut from '../components/SlideOut';
 import Characters from '../views/Characters';
 import Character from '../views/Character';
 
-import styles from '../css/LoggedIn.module.scss'
+import styles from '../css/LoggedIn.module.scss';
 
 class Home extends Component {
   render() {
@@ -16,10 +16,11 @@ class Home extends Component {
       <div className={styles.container}>
         <SlideOut />
         <div className={styles.contentContainer}>
-          <Switch>
+          <div style={{width: "calc(32% - 20px)"}}>
             <Route path='/characters' component={Characters} exact/>
-            <Route path='/characters/:characterID' component={Character} exact/>
-          </Switch>
+            <Route path='/' component={Characters} exact/>
+          </div>
+          <Route path='/characters/:characterID' component={Character} exact/>
         </div>
       </div>
     )
