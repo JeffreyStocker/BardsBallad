@@ -21,6 +21,7 @@ const Container = styled(Link)`
 
   margin: ${props => props.margin || 0};
   padding: ${props => props.padding || 0};
+  box-sizing: border-box;
 
   ${props => props.grow && css` flex-grow: ${props.grow}; `}
 
@@ -34,7 +35,7 @@ const Character = (props) => {
   const { name, job, lvl, id } = props;
 
   return (
-    <Container to={`/characters/${id}`} width='calc(32% - 20px)' padding='10px' bg='true'>
+    <Container to={`/characters/${id}`} width='100%' padding='10px' bg='true'>
       <Text>{name}</Text><Text>{job}: {lvl}</Text>
     </Container>
   )
